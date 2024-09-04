@@ -1,8 +1,8 @@
 class ProfileModel {
-  final String? name;
-  final String? email;
-  final String? phone;
-  final String? age;
+  String? name;
+  String? email;
+  String? phone;
+  String? age;
 
   ProfileModel({this.name, this.email, this.phone, this.age});
 
