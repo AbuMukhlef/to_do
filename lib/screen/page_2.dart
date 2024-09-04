@@ -11,7 +11,7 @@ class PageTwo extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SizedBox(height: context.getWidthScreen(width: 0.5)),
+            SizedBox(height: context.getWidthScreen(multipleWidth: 0.4)),
             const Text('Name:'),
             const Text('-----'),
             const Text('Age:'),

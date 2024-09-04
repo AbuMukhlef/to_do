@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 
 class MyTextField extends StatelessWidget {
-  const MyTextField({super.key});
-
+  const MyTextField({super.key, this.text});
+  final String? text;
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10),
-      child: TextField(
-        decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: 'Name',
-        ),
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, right: 20, bottom: 5),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(text ?? ''),
+          const TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Type here',
+            ),
+          ),
+        ],
       ),
     );
   }
