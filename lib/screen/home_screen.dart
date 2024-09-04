@@ -11,14 +11,22 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const MyTextField(),
-            const MyTextField(),
-            const MyTextField(),
-            const MyTextField(),
-            const MyTextField(),
-            ElevatedButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const PageTwo()));
-            }, child: const Text('Submit'))
+            const Text('Enter Details',
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blueGrey)),
+            const MyTextField(text: 'Name: '),
+            const MyTextField(text: 'Age: '),
+            const MyTextField(text: 'Email: '),
+            const MyTextField(text: 'Phone: '),
+            SizedBox(height: context.getWidthScreen(multipleWidth: 0.3)),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const PageTwo()));
+                },
+                child: const Text('Submit'))
           ],
         ),
       ),
