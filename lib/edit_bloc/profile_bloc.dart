@@ -14,6 +14,8 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
 
     on<ChangeNameEvent>((event, emit) {
       profileGet.profileNameLayer.name = event.name;
+
+      emit(ChangeNameState());
     });
   }
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MyTextField extends StatelessWidget {
-  const MyTextField({super.key, this.text});
+  const MyTextField({super.key, this.text, this.controller});
   final String? text;
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -11,8 +12,9 @@ class MyTextField extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(text ?? ''),
-          const TextField(
-            decoration: InputDecoration(
+          TextField(
+            controller: controller,
+            decoration: const InputDecoration(
               border: OutlineInputBorder(),
               hintText: 'Type here',
             ),
