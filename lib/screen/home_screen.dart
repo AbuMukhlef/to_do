@@ -7,6 +7,9 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
   final TextEditingController nameController = TextEditingController();
+  final TextEditingController ageController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final bloc = context.read<ProfileBloc>();
@@ -34,15 +37,18 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             MyTextField(text: 'Name: ', controller: nameController),
-            const MyTextField(text: 'Age: '),
-            const MyTextField(text: 'Email: '),
-            const MyTextField(text: 'Phone: '),
+            MyTextField(text: 'Age: ', controller: ageController),
+            MyTextField(text: 'Email: ', controller: emailController),
+            MyTextField(text: 'Phone: ', controller: phoneController),
             SizedBox(height: context.getWidthScreen(multipleWidth: 0.3)),
             ElevatedButton(
                 onPressed: () {
                   bloc.add(ChangeNameEvent(name: nameController.text));
-                  // Navigator.push(context,
-                  //     MaterialPageRoute(builder: (context) => const PageTwo()));
+                  bloc.add(ChangeNameEvent(name: ageController.text));
+                  bloc.add(ChangeNameEvent(name: emailController.text));
+                  bloc.add(ChangeNameEvent(name: phoneController.text));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const PageTwo()));
                 },
                 child: const Text('Submit'))
           ],
