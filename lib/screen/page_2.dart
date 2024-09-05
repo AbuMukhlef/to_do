@@ -8,22 +8,26 @@ class PageTwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = context.read<ProfileBloc>();
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            SizedBox(height: context.getWidthScreen(multipleWidth: 0.4)),
-            const Text('Name:'),
-            const Text('-----'),
-            const Text('Age:'),
-            const Text('-----'),
-            const Text('Email:'),
-            const Text('-----'),
-            const Text('Phone:'),
-            const Text('-----'),
-          ],
+        child: BlocBuilder<ProfileBloc, ProfileState>(
+          builder: (context, state) {
+            final bloc = context.read<ProfileBloc>();
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(height: context.getWidthScreen(multipleWidth: 0.4)),
+                const Text('Name:'),
+                Text(bloc.profileGet.profileNameLayer.name ?? '-----'),
+                const Text('Age:'),
+                Text(bloc.profileGet.profileNameLayer.name ?? '-----'),
+                const Text('Email:'),
+                Text(bloc.profileGet.profileNameLayer.name ?? '-----'),
+                const Text('Phone:'),
+                Text(bloc.profileGet.profileNameLayer.name ?? '-----'),
+              ],
+            );
+          },
         ),
       ),
     );
