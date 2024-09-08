@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:getit_with_bloc/core/extension/get_screen_size.dart';
+import '../core/all_file.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,13 +13,7 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showModalBottomSheet(
-              context: context,
-              builder: (context) => Container(
-                  color: Colors.amber,
-                  height: context.getWidthScreen(multipleWidth: 0.9),
-                  width: double.infinity,
-                  child: const Text('Hello')));
+          myBottomSheet(context);
         },
         child: const Icon(Icons.add),
       ),
