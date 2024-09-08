@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:getit_with_bloc/edit_bloc/profile_bloc.dart';
 import 'package:getit_with_bloc/screen/home_screen.dart';
 
 import 'dependency/setup.dart';
@@ -16,11 +15,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ProfileBloc(),
-      child: MaterialApp(
-        home: HomeScreen(),
-      ),
+    return const MaterialApp(
+      home: HomeScreen(),
     );
   }
 }

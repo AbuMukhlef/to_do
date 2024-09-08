@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
-import 'package:getit_with_bloc/layer/profile_layer.dart';
+
+import '../data_layer/task_data_layer.dart';
 
 void setup() {
-  GetIt.I.registerSingleton<ProfileLayer>(ProfileLayer());
+  GetIt.I.registerSingleton<TaskDataLayer>(TaskDataLayer());
 }
